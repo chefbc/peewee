@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: peewee-deployment
+spec:
+  selector:
+    matchLabels:
+      app: peewee
+  template:
+    metadata:
+      labels:
+        app: peewee
+    spec:
+      containers:
+      - name: peewee
+        image: chefbc/flask-demo
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
+
+
+
+
+
