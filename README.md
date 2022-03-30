@@ -3,6 +3,8 @@
 ### Building our Container
 ```
 docker build -t flask-demo:latest .
+docker build -t peewee:latest .
+
 ```
 
 ### Running our Container
@@ -12,6 +14,10 @@ docker stop flask-app
 docker run -d -p 5000:5000 flask-demo
 
 docker run --rm -d --name flask-app -p 5000:5000 --privileged --user root flask-demo
+
+
+docker run -it -p "5000:5000" --rm --name peewee peewee
+
 ```
 
 ### View Container
